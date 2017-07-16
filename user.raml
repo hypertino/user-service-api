@@ -4,19 +4,16 @@ version: v1
 mediaType: application/json
 baseUri: hb://user
 
-types:
-  User:
-    properties:
-      user_id:
-        type: string
-
 /users:
   get:
-    body:
-      type: Validation
-      example: {"authorization": "Basic QWxhZGRpbjpPcGVuU2VzYW1l"}
+    responses:
+      200:
+  post:
     responses:
       201:
-        body:
-          type: object
-          example: { "identity_keys": {"username": "Aladdin"}, "extra": {} }
+
+/users/{user_id}:
+  get:
+  patch:
+    responses:
+      204:
