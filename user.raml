@@ -1,0 +1,22 @@
+#%RAML 1.0
+title: User API
+version: v1
+mediaType: application/json
+baseUri: hb://user
+
+types:
+  User:
+    properties:
+      user_id:
+        type: string
+
+/users:
+  get:
+    body:
+      type: Validation
+      example: {"authorization": "Basic QWxhZGRpbjpPcGVuU2VzYW1l"}
+    responses:
+      201:
+        body:
+          type: object
+          example: { "identity_keys": {"username": "Aladdin"}, "extra": {} }
