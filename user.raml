@@ -4,6 +4,12 @@ version: v1
 mediaType: application/json
 baseUri: hb://user
 
+types:
+  UpdatedUser:
+    type: object
+    properties:
+      user_id: string
+
 /users:
   get:
     responses:
@@ -11,6 +17,9 @@ baseUri: hb://user
   post:
     responses:
       201:
+        body: UpdatedUser
+      200:
+        body: UpdatedUser
 
 /users/{user_id}:
   uriParameters:
@@ -18,4 +27,5 @@ baseUri: hb://user
   get:
   patch:
     responses:
-      204:
+      200:
+        body: UpdatedUser
